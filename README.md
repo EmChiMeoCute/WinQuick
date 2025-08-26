@@ -1,11 +1,26 @@
 Explanation
 
-This project provides two small but powerful PowerShell scripts designed to make managing applications on Windows much easier: WinQuick and Update. Both tools are built on top of Microsoft’s winget package manager and were created to simplify tasks that usually require typing long commands into the terminal. Instead of remembering application IDs or repeatedly typing upgrade commands, you can use these scripts with a simple graphical interface.
+This project contains two small PowerShell scripts: WinQuick and Update. They are designed to save time when installing or updating applications on Windows. Both scripts use Microsoft’s winget package manager, but instead of requiring you to type long commands into the terminal, they give you a simple graphical interface.
 
-WinQuick is a script that helps you install applications quickly. Normally, if you want to install software with winget, you would need to type a command such as winget install --id Google.Chrome. With WinQuick, you only need to open the tool, select the apps you want from a list (for example Chrome, Discord, Visual Studio Code, OBS Studio, or Spotify), and press the install button. The script will then automatically run the correct commands in the background. You can also install multiple apps at the same time, which saves a lot of time when setting up a new computer or after reinstalling Windows.
+WinQuick is used when you want to install new applications. Normally, installing software with winget requires commands like:
 
-Update is the companion script focused on keeping your system up to date. It scans your system for all applications installed through winget and checks if new versions are available. Instead of updating each application one by one, Update presents a list of all apps that have updates pending. You can then choose which ones you want to update by ticking checkboxes. There are also quick actions like “Select All” or “Clear All” to make the process faster. When you click Update Selected, the script silently runs the updates for you and shows the progress in a log window. This way you can easily keep your apps current without typing commands manually.
+winget install --id Google.Chrome
 
-Both scripts are very lightweight and do not require installation themselves. You simply copy the code or run them directly with a one-line command from PowerShell using irm ... | iex. They are especially useful for people who frequently reinstall Windows, maintain multiple PCs, or just prefer a simple visual interface over the command line.
 
-In short, the purpose of this project is to save time and reduce friction. Installing or updating applications should be quick and easy, and with WinQuick and Update you no longer need to waste energy typing commands or remembering package IDs. Just select what you need, click a button, and let the script handle the rest.
+With WinQuick, you just open the script, check the boxes for the applications you want (for example Chrome, Discord, OBS Studio, Spotify, or Visual Studio Code), and press the Install button. The script runs the correct commands for you. You can select multiple apps at once, so it is very helpful when setting up a new computer.
+
+Update is used when you want to keep your apps up to date. Instead of typing winget upgrade and updating each app one by one, Update scans your system and shows you a list of applications with new versions available. You can then choose which ones to update. There are also buttons for “Select All” and “Clear All” so you do not have to click every box manually. After you make your selection, click Update and the script will upgrade the apps and show you the results in a log window.
+
+The benefit of these scripts is that they are fast, easy to use, and require no setup. You can run them directly from PowerShell with a single command. For example:
+
+Run WinQuick (to install apps):
+
+irm https://gist.githubusercontent.com/EmChiMeoCute/e02b78971f454162757c101a5f767d79/raw/WinQuick.ps1 | iex
+
+
+Run Update (to check and update apps):
+
+irm https://gist.githubusercontent.com/EmChiMeoCute/72dcf8bec48c0eea29bd403c65477d65/raw/Update.ps1 | iex
+
+
+In short, WinQuick helps you install applications quickly, and Update helps you update them just as easily. This makes managing software on Windows much faster and more convenient, especially if you reinstall often or maintain multiple computers.
